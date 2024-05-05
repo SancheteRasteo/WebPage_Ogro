@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="description" content="Free Web tutorials">
+		<meta name="author" content="John Doe">
+		<!-- <meta http-equiv="refresh" content="30">  Refresca la pagina cada tantos segundos -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>El Ogro Fabbiani</title>
+
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral|Rubik|Amatic SC">
+
+		<script src="HtmlScripts.js"></script>
+	</head>
+	<body id="bodyDay" onload="onLoad()">  <!-- window.getComputedStyle(sections[0]).getPropertyValue('background-color') -->
+		<nav>
+			<div id="dropdown" class="dropdown" onmouseleave="changeDisplay(0)">
+				<button class="dropbtn" onmouseenter="changeDisplay(1)">Ogro</button>
+				<div class="dropdown-content">
+				  <a href="#ogro" onclick="changeDropName(this)">Ogro</a>
+				  <a href="#prub" onclick="changeDropName(this)">Pruebas</a>
+				  <a href="#anime" onclick="changeDropName(this)">Anime</a>
+				  <a href="#enzo" onclick="changeDropName(this)">Enzo F.</a>
+				</div>
+			</div>
+			<!-- <a href="#">
+				Ogro
+			</a>
+			<a href="#prub">           Forma sin Dropdown y Visualizando el flex
+				Pruebas
+			</a>
+			<a href="#anime">
+				Anime
+			</a> -->
+			<span></span>
+			<div id="Color" class="fondBut separation" onclick="darkBright(this)" title="Cambiar Color">
+				⚪
+			</div>
+			<div id="Fondo" class="fondBut separation" onclick="cambiarFondo(this)" title="Cambiar Fondo">
+				🌁
+			</div>
+		</nav>
+
+		<header>
+			<h1 class="ScaledText">
+				<ins>EL OGRO FABBIANI</ins>
+			</h1>
+		</header>
+
+		<article>
+			<section id="ogro" class="ilb Ogre">
+				<section class="ilb section1section1 flexin">
+					<article id="OgroImg">
+						<article class="block_I">
+							<p>
+								<strong>Hola, Buenas Tardes.</strong>
+							</p>
+							<p>
+								Esta es una imagen del OGRO <!-- Fabbiani -->
+							</p>
+						</article>
+
+						<br>
+
+						<div class="marcoOgro">
+							<img src="EL DIEGOOOO.jpg" class="diegovich">
+							<img src="EL OGRO.jpeg" alt="Chupala" class="ogrovich" usemap="#M1">
+						</div>
+
+						<map name="M1">
+							<area shape="poly" coords="120,170,142,121,205,78,228,110,250,110,260,105,280,120,277,205,\
+							265,210,273,294,220,321,136,307,150,185" target="_blank" href="https://www.bing.com/\
+							search?q=Club+Atl%C3%A9tico+Newell%27s+Old+Boys&amp;cvid=f00e94e0ef024ad79bb44e5074b92bb9&amp;\
+							aqs=edge..69i57j0l6j69i60.1255j0j1&amp;pglt=673&amp;FORM=ANNTA1&amp;PC=U531" title="\
+							Club Atlético Newell's Old Boys">
+							<area shape="circle" coords="300,435,44" target="_blank" href="https://es.wikipedia.org/\
+							wiki/Anexo:Torneo_Apertura_2008_(Argentina)\
+							#:~:text=El%20Torneo%20%C2%ABCablevisi%C3%B3n%C2%BB%20Apertura%202008%20fue%20el%20certamen,\
+							de%20agosto%20y%20finaliz%C3%B3%20el%2023%20de%20diciembre." title="Torneo Apertura 2008">
+							<area shape="circle" coords="250,65,40" target="_blank" href="https://www.bing.com/images/\
+							search?q=Cristian%20Fabbiani&amp;qs=n&amp;form=QBIR&amp;sp=-1&amp;pq=cristian%20fabbiani&amp;\
+							sc=3-17&amp;cvid=EBCAAFFC744E4C618FF652797A435D9C&amp;ghsh=0&amp;ghacc=0&amp;first=1&amp;\
+							tsc=ImageHoverTitle" title="Imagenes de Cristian Fabbiani">
+						</map>
+					</article>
+
+					<article id="OgroVid">
+						<h2 class="FontsizeMax">
+							¡Era el gol de la Fecha Gamboa!
+						</h2>
+
+						<video id="myVid" src="Era el gol de la Fecha.mp4" class="vidstyle" muted 
+						oncontextmenu="zoomearVid(this, true)" poster="NANANANA.jpg" controls>
+						</video>
+
+						<div id="myModal" class="modal">
+							<span class="close" onclick="zoomearVid(this, false)">&times;</span>
+							<video class="modal-content" id="vid01" onended="mostrar()" controls></video>
+							<div id="caption"></div>
+						</div>
+
+						<p id="alto" class="textoNegro"></p>
+
+						<p>
+							<a class="Boton" href="https://www.youtube.com/watch?v=9xmB4-MbmmM&ab_channel=futbolargentino2017" 
+							target="_blank" title="Ta tan ta tan!ogro fabbiani">
+								Link del video ORIGINAL
+							</a>
+						</p>
+					</article>
+				</section>
+
+				<article>
+					<button target="_blank" class="butoni" 
+					onclick="document.location='https://www.youtube.com/watch?v=XFqee1XnJmI&ab_channel=TyCSports'">
+						<span>Libero VS</span>
+					</button>
+				</article>
+			</section>
+
+			<section id="prub" class="ilb Ogre">
+				<h2>
+					<ins>Practica de Cosicas</ins>
+				</h2>
+
+				<p>
+					<abbr>
+						Quotes
+						<span>Citas Textuales</span>
+					</abbr>
+				</p>
+
+				<p>
+					<bdo dir="rtl">
+						Una <q>quote</q>
+					</bdo>
+				</p>
+
+				<h3 onclick="reproducir(this)">
+					<ins>Una blockquote:</ins>
+				</h3>
+
+				<blockquote class="AizenBackGround" onmouseenter="animationBlocote(this, true)" 
+				onended="animationBlocote(this, false)">
+					<p id="cancioncita">
+						Shizuka ni Shizuka ni, maku wa kiri oto shi, kaku sei no, youake ni, aoi honou,
+						......, mi wa tatsu, kagiri no yami to, kato wo, te saguru no hibi, bokura wa make wo shiranai,
+						yowasa wo dakishime aruita, atarashi i kiba de, shidai wo kisame &#128507
+					</p>
+				</blockquote>
+
+				<address class="ilb FontsizeMax">
+				Ranbu no Melody<br>
+				SID<br>
+				</address>
+
+				<fieldset class="section1section1 formBox2">
+					<legend class="legen">Ingrese el caracter/palabra/conjunto de caracteres que quiera contar del texto</legend>
+					<div class="DivBut">
+						<span class="formItem">
+							<label>(Es case sensitive)</label>
+							<input type="text" id="pala" size="25" placeholder="'shizuka' o 'shi' o 'a'">
+						</span>
+						<p id="quant_words"></p>
+					</div>
+					<input type="button" class="formItem agrego2 agrego DivBut" value="Chequear" onclick="matchPalabras()">
+				</fieldset>
+			</section>
+
+			<section id="anime" class="ilb Ogre">
+				<h2>
+					Anime List
+				</h2>
+
+				<ul class="Index ilb" id="SerieList">
+					<li class="ListaIndex" oncontextmenu="disapier(this)" style="background-image: url('https://www3.animeflv.net/uploads/animes/covers/3509.jpg');">
+						<a href="https://www3.animeflv.net/anime/evangelion-30-10-thrice-upon-a-time" 
+						target="_blank">Evangelion</a>
+					</li>
+					<li class="ListaIndex" oncontextmenu="disapier(this)" style="background-image: url('https://www3.animeflv.net/uploads/animes/covers/5.jpg');">
+						<a href="https://www3.animeflv.net/anime/fairy-tail" 
+						target="_blank">Fairy Tail</a>
+					</li>
+					<li class="ListaIndex" oncontextmenu="disapier(this)" style="background-image: url('https://www3.animeflv.net/uploads/animes/covers/3836.jpg');">
+						<a href="https://www3.animeflv.net/anime/jujutsu-kaisen-2nd-season" 
+						target="_blank">Jujutsu Kaizen 2nd Season</a>
+					</li>
+				</ul>
+
+				<fieldset class="section1section1 formBox">
+					<legend class="legen">Serie/Pelicula:</legend>
+					<div class="DivBut">
+						<span class="formItem">
+							<label>Nombre (Acortado): </label>
+							<input type="text" id="name" size="25">
+						</span>
+						<div class="formItem">
+							<label>Link: </label>
+							<input type="url" id="linked" title="URL only" placeholder="https://www3.animeflv.net/anime/XXXXX" 
+							size="80">
+						</div>
+					</div>
+					<input type="button" class="formItem agrego DivBut" value="Agregar" onclick="spawnSerie(false)">
+				</fieldset>
+
+				<article class="formBoxAlternative">
+					<ul class="Index ilb rrr" id="SerieRandom">
+						<li class="ListaIndex2">
+							<a href="" target="_blank"></a>
+						</li>
+					</ul>
+
+					<input id='SerieRandButton' type="button" class="formItem agrego DivBut rrr" value="Random" 
+					onclick="randomSerie('SerieRandom','anime', 'https://www3.animeflv.net/uploads/animes/covers/', 3959, '.jpg')">
+				</article>
+			</section>
+
+			<section id="enzo" class="ilb Ogre">
+				<h2>
+					Enzo Jeremías Fernández
+				</h2>
+				<div class="rotateGalery rotateGaleryWhite" onclick="rotate(0, 'r')">
+				</div>
+				<div class="rotateGalery rotateGaleryWhite rightrotate" onclick="rotate(1, 'r')">
+				</div>
+				<div id="galeria">
+				</div>
+				<div id="buttonsImages">
+				</div>
+			</section>
+		</article>
+
+		<footer>
+			<div class="foot">
+				End of the Page
+			</div>
+			<div id="reloj" class="date">
+				<!-- Contenido del reloj -->
+			</div>
+		  </footer>
+	</body>
+</html>

@@ -1,0 +1,1030 @@
+/*-----Variables-----*/
+
+@font-face {
+  font-family: "Billionstar";
+  src: url("Billionstar.ttf");
+}
+
+@font-face {
+  font-family: "Farrah-Bold";
+  src: url("Farrah-Bold.otf");
+}
+
+@font-face {
+  font-family: "Spectral";
+  src: url("https://fonts.googleapis.com/css?family=Spectral");
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("https://fonts.googleapis.com/css?family=Rubik");
+}
+
+@font-face {
+  font-family: "Amatic";
+  src: url("https://fonts.googleapis.com/css?family=Amatic_SC");
+}
+
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:1450px) {
+  #OgroVid {
+    margin: 5px;
+    padding: 5px;
+  }
+  #OgroImg {
+    margin: 5px 5px 10px 5px;
+    padding: 5px;
+  }
+  .flexin {
+    flex-flow: wrap column;
+    justify-content: center;
+  }
+}
+
+@keyframes blocote{
+  0%  {transform: rotate(0deg);}
+  25%  {transform:rotatey(90deg)}
+  50% {transform:rotatey(180deg); 
+        transform:rotatex(270deg)}
+  75% {transform:rotatey(270deg);}
+  100%  {transform:rotatey(360deg);
+        transform:rotatex(360deg);}
+}
+
+@keyframes textoBlocote {
+  0% {color: rgb(0, 0, 0)}
+  100%  {color: rgb(255, 255, 255)}
+}
+
+@keyframes ogroIMG {
+  to {opacity: 0}
+}
+
+@keyframes zoom {
+  from {transform: scale(0.1)} 
+  to {transform: scale(1)}
+}
+
+:root {
+  --bgColorSection: rgb(255, 240, 245);
+  --imageShadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  --navFooterColor: rgb(11, 16, 43, 0.5);
+  --formDecoColor: rgb(63, 156, 167, 0.8);
+}
+
+/*------Predeterminados-----*/
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+	text-align: center;
+	font-size: 125%;
+	font-family: Rubik, Arial, sans-serif;
+  margin: 0;
+}
+
+body > section > section:not(section[id=ogro]) {
+  width: 80%;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0px;
+  box-sizing: border-box;
+  background-color: var(--navFooterColor);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  transition: background-color .2s;
+}
+
+nav > *:hover:not(.dropdown) {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: rgba(240, 255, 255, 0.6);
+}
+
+nav > div:not(.dropdown) {
+  margin: 0px 10px;
+  padding: 2px 5px 5px 5px;
+  background-color: transparent;
+  border-radius: 5px;
+  align-items: center;
+  transition: transform .2s;
+  transition: background-color .2s;
+}
+
+nav span {
+  flex: 5;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 4px 5px;
+  background-color: transparent;
+  border-radius: 5px;
+  align-items: center;
+  transition: transform .2s;
+  transition: background-color .2s;
+  margin: 0px 10px;
+}
+
+header {
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: rgb(133, 67, 100);
+  margin: 0px 0px 10px 0px;
+  padding: min(1em, 1px);
+}
+
+h1 {
+	font-family: Spectral, Georgia, serif;
+	color: snow;
+}
+
+h2 {
+  color: aliceblue;
+	font-family: Farrah-Bold, fantasy;
+}
+
+h3 {
+  color: lavenderblush;
+	font-family: Spectral, Georgia, serif;
+  cursor: pointer;
+}
+
+p {
+	color: white;
+}
+
+abbr {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+abbr span {
+  visibility: hidden;
+  width: 210px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 110%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+abbr span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+abbr:hover span {
+  visibility: visible;
+  opacity: 1;
+}
+
+blockquote {
+  max-width: 80vw;
+  padding: 5px;
+}
+
+blockquote > p {
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px 0px;
+}
+
+blockquote > p:hover {
+  height: initial;
+  white-space: normal;
+}
+
+address {
+  font-family: Billionstar, cursive;
+  transition: background-color .2s;
+  padding: 2px 10px;
+}
+
+address:hover {
+  background-color: rgb(80, 141, 138) ;
+  transition: background-color .5s;
+}
+
+input:not(input[type=button]) {
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  width: 200px;
+  transition: width 0.4s ease-in-out;
+}
+
+input:not(input[type=button]):focus {
+  border: 3px solid #555;
+  width: 70%;
+}
+
+footer {
+  box-sizing: border-box;
+  color: white;
+  background-color: var(--navFooterColor);
+  margin: 10px 0px 0px 0px;
+  padding: 5px;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  z-index: 3;
+  transition: background-color .2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer:hover {
+  background-color: rgb(11, 16, 43, 1);
+  transition: background-color .2s;
+}
+
+.foot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.date {
+  margin-left: auto;
+}
+
+/*----Classes-----*/
+
+.block_I {
+  border: ridge 6px rgb(217, 255, 127);
+  padding: 5px; 
+  margin: 10px; 
+  display: inline-block;
+}
+
+.Ogre {
+  margin: 10px;
+  padding: 5px;
+  padding-bottom: 10px;
+  background-color: var(--bgColorSection);
+  border: 9px outset gray;
+}
+
+.Ogre h2, .Ogre h3, .Ogre p {
+  color: black;
+}
+
+.lb {
+  display: block;
+}
+
+.ilb {
+  display: inline-block;
+}
+
+.FontsizeMax {
+  font-size: 130%;
+}
+
+.Elegante {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: italic;
+}
+
+.AizenBackGround {
+  background-image: url('Aizen.jfif');
+}
+
+.blocot {
+  animation-name: blocote;
+  animation-duration: 2s;
+  animation-direction: alternate;
+}
+
+.textBlocot {
+  animation-name: textoBlocote;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+}
+
+.vidstyle {
+  max-width: 800px; 
+  max-height: 740px;
+  margin: auto;
+  cursor: pointer;
+  box-shadow: var(--imageShadow);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 980px;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+.modal-content, #caption {  
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+.close {
+  position: absolute;
+  top: 65px;
+  right: 320px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover, .close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Boton:link, .Boton:visited {
+  color: white;
+  background-color: darkblue;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color .1s;
+}
+
+.Boton:hover {
+  color: white;
+  background-color: blue;
+  text-decoration: underline;
+  transition: background-color .1s;
+}
+
+.Boton:active {
+  color: black;
+  background-color: lightblue;
+  text-decoration: underline;
+}
+
+.Index {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 12px;
+  overflow: hidden;
+  background-color: #333333;
+  box-shadow: var(--imageShadow);
+}
+
+.ListaIndex {
+  float: left;
+  width: 260px;
+  height: 370px;
+  position: relative;
+}
+
+.ListaIndex a {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  height: inherit;
+  width: inherit;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  background-color: #11111140;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+.ListaIndex a:hover {
+  background-color: transparent;
+  color: transparent;
+}
+
+.ListaIndex2 {
+  float: left;
+  width: 260px;
+  height: 370px;
+  position: relative;
+}
+
+.ListaIndex2 a {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  height: inherit;
+  width: inherit;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.textoNegro {
+  color: black;
+}
+
+.ScaledText {
+  font-size:4vw;
+  /*Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.*/
+  text-shadow: 2px 2px 5px rgb(255, 231, 231);
+}
+
+.marcoOgro {
+  width: 442px;
+  height: 642px;
+  position: relative;
+  box-shadow: var(--imageShadow);
+}
+
+.ogrovich {
+  max-width:100% !important;
+  max-height:100% !important;
+  width: 442px;
+  height: 642px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ogrovich:hover {
+  animation-name: ogroIMG;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.diegovich {
+  width: 442px;
+  height: 642px;
+  filter: sepia(100%);
+  filter: blur(50%);
+}
+
+.section1section1 {
+  margin: 10px;
+  padding: 5px;
+}
+
+.flexin {
+  display: flex;
+  flex-direction: row;
+  flex: 2;
+}
+
+.butoni {
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: darkblue;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.butoni span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.butoni span:after {
+  content: '\00bb';
+  position: absolute;
+  font-size: 40px;
+  opacity: 0;
+  bottom: -3px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.butoni:hover span {
+  padding-right: 25px;
+}
+
+.butoni:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.formBox {
+  border: 10px solid transparent;
+  border-image: url("Border image Animu.jpg") 50 round;
+  padding: 15px;
+  margin: auto 10px; 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #0b102b;
+  color: white;
+}
+
+.formBox2 {
+  border: 10px solid black;
+  padding: 15px;
+  margin: 10px; 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #0b102b;
+  color: white;
+}
+
+.formBox > div, .formBox2 > div {
+  flex-flow: column wrap;
+  min-width: 70%;
+}
+
+.formBoxAlternative {
+  padding: 15px;
+  margin: auto 10px; 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.formBoxAlternative > .rrr {
+  margin: 10px;
+}
+
+.formItem {
+  padding: 0px 10px 0px 10px;
+  display: inline-block;
+}
+
+.legen {
+  padding: 5px;
+  color: black;
+  background-color: var(--formDecoColor);
+  border-radius: 1vw;
+}
+
+.agrego {
+  display: inline-block;
+  padding: 10px 18px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: rgb(63, 156, 167);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.agrego2 {
+  font-size: 16px;
+}
+
+.agrego:hover {background-color: var(--formDecoColor);}
+
+.agrego:active {
+  background-color: var(--formDecoColor);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.agregodo {
+  display: inline-block;
+  padding: 10px 18px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  background-color: rgb(63, 156, 167);
+  transition: background-color 1.2s;
+}
+
+.agregodo:enabled {
+  background-color: rgb(255, 137, 137);
+}
+
+.agregodo:hover {background-color: rgb(255, 137, 137, 0.8);}
+
+.agregodo:active {
+  background-color: rgb(255, 137, 137, 0.8);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.DivBut {
+  margin-bottom: 6px;
+  padding: 5px 0px;
+}
+
+.dark0 {
+  background-image: none;
+  background-color: #000000;
+}
+
+.dark1 {
+  background-color: #0b0b0b;
+  display: flex;
+  flex-flow: wrap row;
+  padding: 4px;
+  color: red;
+  text-shadow: 4px 4px 5px rgba(255, 0, 0, 0.95);
+  font-family: Amatic, Papyrus, fantasy;
+}
+
+.dark2 {
+  background-image: none;
+  background-color: #474747;
+  height: 10000px;
+  color: rgb(112, 126, 144);
+  font-family: sans;
+}
+
+.casilla {
+  position: absolute;
+  top: 300px;
+  right: 10px;
+}
+
+.casillaInput {
+  margin: 5px;
+  border: none;
+  background-color: aquamarine;
+  color: black;
+}
+
+.oculta {
+  position: absolute;
+  padding: 15px;
+  top: 7700px;
+  right: 10px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.ocultaInput {
+  margin: 5px;
+  border: none;
+  background-color: hotpink;
+  color: black;
+  cursor: pointer;
+}
+
+.help1 {
+  position: absolute;
+  top: 100px;
+  left: 10px;
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+.help2 {
+  position: absolute;
+  top: 9920px;
+  align-items: center;
+  justify-content: center;
+  font-size: 300%;
+  color: black;
+}
+
+.help3 {
+  position: absolute;
+  top: 9930px;
+  align-items: center;
+  font-size: 150%;
+  color: rgb(124, 124, 124);
+}
+
+.help4 {
+  position: absolute;
+  top: 9940px;
+  align-items: center;
+  justify-content: center;
+  font-size: 40%;
+  color: white;
+}
+
+.help5 {
+  position: absolute;
+  top: 6000px;
+  right: 20px;
+  font-size: 1%;
+}
+
+.help6 {
+  position: absolute;
+  top: 3920px;
+  align-content: center;
+  transform: rotate(120deg);
+  font: 150% Arial;
+  color: rgb(124, 124, 124);
+}
+
+.dropbtn {
+  color: white;
+  text-align: center;
+  align-content: center;
+  font-size: 100%;
+	font-family: Rubik, Arial, sans-serif;
+  background-color: transparent;
+  padding: 4px 5px;
+  margin: 0px 10px;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  transition: transform .2s;
+  transition: background-color .2s;
+}
+
+.dropdown {
+  color: white;
+  align-items: center;
+  margin: 0px 10px;
+  border-radius: 5px;
+}
+
+.dropdown-content {
+  background-color: #1d1d1d;
+  color: white;
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  padding: 5px 10px;
+  margin: 0px 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  transition: transform .2s;
+  transition: background-color .2s;
+}
+
+.dropdown-content:hover {
+  transform: scale(1.025);
+  transition: transform .2s;
+}
+
+.dropdown-content a {
+  padding: 4px 5px;
+  margin: 4px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover, .dropdown:hover .dropbtn {
+  cursor: pointer;
+  transform: scale(1.05);
+  background-color: rgba(240, 255, 255, 0.6);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.galeriaIMG {
+  box-shadow: var(--imageShadow);
+  object-fit: cover;
+  width: 416px;
+  height: 564px;
+}
+
+.galeriafigCap {
+  font-size: large;
+  margin-top: 10px;
+}
+
+.figurenzo {
+  margin: 0px 20px;
+  position: absolute;
+}
+
+.overlayEnzo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(5, 63, 142, 0.6);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+#IMGaleria1:hover .overlayEnzo {
+  top: 0;
+  height: 94%;
+}
+
+.overlayEnzo > div {
+  color: white;
+  font-size: 24px;
+  font-family: 'Spectral';
+  position: absolute;
+  overflow: hidden;
+  top: 5%;
+  margin: 10px;
+  width: fit-content;
+  text-align: left;
+  line-height: 120%;
+  box-sizing: border-box;
+}
+
+.rotateGalery {
+  position: absolute;
+  width: 9vw;
+  height: 640px;
+  z-index: 2;
+  margin: 0;
+  cursor: pointer;
+}
+
+.rotateGaleryWhite {
+  background-color: var(--bgColorSection);
+  transition: background-color 0.4s;
+}
+
+.rotateGaleryWhite:hover {
+  background-color: rgb(230, 216, 220);
+}
+
+.rotateGaleryBlack {
+  background-color: rgb(15, 15, 15);
+  transition: background-color 0.4s;
+}
+
+.rotateGaleryBlack:hover {
+  background-color: rgb(29, 29, 29);
+}
+
+.rightrotate {
+  right: 21.5vmin;
+}
+
+.dot {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  margin: 0 5px;
+  display: inline-block;
+  transition: transform 0.5 ease;
+}
+
+.dot:hover {
+  transform: scale(1.2);
+}
+
+/*----IDs-----*/
+
+#OgroVid {
+  margin: 5px 5px 10px 5px;
+  padding: 5px;
+}
+
+#OgroImg {
+  margin: 5px;
+  padding: 5px;
+  min-width: 30%;
+}
+
+#bodyAlternateNight {
+  background-image: radial-gradient(circle, rgb(5, 85, 95),  rgb(0, 31, 99),  rgb(0, 11, 29));
+}
+
+#bodyAlternateDay {
+  background-image: radial-gradient(circle,  rgb(0, 79, 214),  rgb(0, 183, 255), rgb(201, 249, 255));
+}
+
+#bodyNight {
+  background-image: url('night-sky.jpeg');
+}
+
+#bodyDay {
+  background-image: url('Sky.jpg');
+}
+
+#galeria {
+  width: 1200px;
+  height: 31em;
+  position: inherit;
+  display: inline-block;
+}
+
+#IMGaleria1 {
+  transform: scale(1);
+  left: 0;
+  right: 0;
+  width: fit-content;
+  margin: auto;
+}
+
+#IMGaleria2 {
+  position: absolute;
+  left: 60vw;
+  transform: scale(0.6);
+  z-index: 1;
+  cursor: pointer;
+}
+
+#IMGaleria3 {
+  position: absolute;
+  right: 0;
+  visibility: hidden;
+  transform: scale(0.3);
+}
+
+#IMGaleria4 {
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+  transform: scale(0.3);
+}
+
+#IMGaleria5 {
+  position: absolute;
+  right: 60vw;
+  transform: scale(0.6);
+  z-index: 1;
+  cursor: pointer;
+}
+
+#IMGaleria5 > img, #IMGaleria2 > img {
+  opacity: 0.5;
+  filter: blur(50%);
+  transition: opacity 0.4s;
+}
+
+#IMGaleria5 > figcaption, #IMGaleria2 > figcaption {
+  opacity: 0;
+}
+
+#IMGaleria5 > img:hover, #IMGaleria2 > img:hover {
+  opacity: 0.8;
+}
+
+#buttonsImages {
+  margin-top: 0px;
+}
+
+#quant_words {
+  color: #f1f1f1;
+}
