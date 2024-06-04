@@ -1,0 +1,1 @@
+style="width: 800px; height: 740px; object-fit: cover"
